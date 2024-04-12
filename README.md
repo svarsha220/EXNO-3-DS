@@ -37,8 +37,7 @@ import pandas as pd
 df=pd.read_csv("/content/Encoding Data.csv")
 df
 ```
-
-![Screenshot 2024-03-26 161552](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/a637f1a6-5e6d-4fcb-8ede-285e2d41aafc)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/aae763cd-3117-4c8e-bf2c-c652a5541541)
 
 ```
 from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
@@ -46,15 +45,13 @@ pm=['Hot','Warm','Cold']
 e1=OrdinalEncoder(categories=[pm])
 e1.fit_transform(df[["ord_2"]])
 ```
-
-![Screenshot 2024-03-26 161656](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/1eab3a81-cf03-401d-9e7c-1d21381946fa)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/b8e416e0-1631-4afc-a303-fba2a3a1febd)
 
 ```
 df['bo2']=e1.fit_transform(df[["ord_2"]])
 df
 ```
-
-![Screenshot 2024-03-26 161701](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/064e9035-a217-465c-bf0d-baeaf38a142f)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/2cbc1dc1-5234-45a6-a925-840d7e0baee2)
 
 ```
 le=LabelEncoder()
@@ -62,7 +59,7 @@ dfc=df.copy()
 dfc['ord_2']=le.fit_transform(dfc['ord_2'])
 dfc
 ```
-![Screenshot 2024-03-26 161707](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/cc581ce4-82e8-42a9-8d9c-37a1b365ffbc)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/12ce4365-d23e-4986-941c-b26b61a6bdd7)
 
 ```
 from sklearn.preprocessing import OneHotEncoder
@@ -70,49 +67,43 @@ ohe=OneHotEncoder(sparse=False)
 df2=df.copy()
 enc=pd.DataFrame(ohe.fit_transform(df2[["nom_0"]]))
 ```
-
-![Screenshot 2024-03-26 161716](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/4d93974b-16f9-4b27-9d00-4cc0abee08d0)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/d6b8bdc9-91e6-41d6-b852-e7c343cc096a)
 
 ```
 df2=pd.concat([df2,enc],axis=1)
 df2
 ```
-
-![Screenshot 2024-03-26 161722](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/74c5c492-dd39-4f11-a75a-64f6a28707bc)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/df24a068-454c-426e-b5c6-77eeb69e719b)
 
 ```
 pd.get_dummies(df2,columns=["nom_0"])
 ```
 
-![Screenshot 2024-03-26 161729](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/b39577a2-d937-4e22-8623-e19735380801)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/54fdc26f-c5e7-4026-a48d-707aee14faab)
 
 ```
 pip install --upgrade category_encoders
 ```
-![Screenshot 2024-03-26 162300](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/3066f410-80e3-4069-be2d-4b056d132b48)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/9deca6ac-1360-4800-93df-d673c5ccd415)
 
 ```
 from category_encoders import BinaryEncoder
 df=pd.read_csv("/content/data.csv")
 df
 ```
-
-![Screenshot 2024-03-26 162308](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/fdbc718b-825b-47ea-8629-31c5303a56d2)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/4c46dc34-429c-489c-bf3a-ce2c62d0fe24)
 
 ```
 be=BinaryEncoder()
 nd=be.fit_transform(df['Ord_2'])
 df
 ```
-
-![Screenshot 2024-03-26 162313](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/973be76c-caf8-4036-8428-ebeb2c035178)
-
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/7e5f8d02-39f8-429b-a1a6-8223f63cd417)
 ```
 dfb=pd.concat([df,nd],axis=1)
 dfb
 ```
-
-![Screenshot 2024-03-26 162319](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/9b0226ab-1692-4377-bce1-e781dd2b05de)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/24b9257d-f1a0-4284-9cfe-bcebe6f13261)
 
 ```
 from category_encoders import TargetEncoder
@@ -122,8 +113,7 @@ new=te.fit_transform(X=CC["City"],y=CC["Target"])
 CC=pd.concat([CC,new],axis=1)
 CC
 ```
-
-![Screenshot 2024-03-26 162325](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/b89fd4dc-c843-489b-8fb1-c4cbece4b686)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/a7944f5e-dac7-41e6-a061-f1326ce96f1c)
 
 ```
 import pandas as pd
@@ -132,57 +122,48 @@ import numpy as np
 df=pd.read_csv("/content/Data_to_Transform.csv")
 df
 ```
-
-![Screenshot 2024-03-26 162333](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/993b0cab-3503-4b86-831e-f661df5b5ca3)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/29e2129f-10e1-448e-9741-1580cbf49b64)
 
 ```
 df.skew()
 ```
-
-![Screenshot 2024-03-26 164950](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/2ee3d99f-b61f-4ec0-ba75-65411a38c4d7)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/bdc4afd2-b0f2-4306-b4c2-66b1b369c7f7)
 
 ```
 np.log(df["Highly Positive Skew"])
 ```
-
-![Screenshot 2024-03-26 165006](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/c21948d7-8891-4a5c-b3e2-d60add4cac7a)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/b78a4f39-f466-46d9-a565-f0e8a8e1a891)
 
 ```
 np.reciprocal(df["Moderate Positive Skew"])
 ```
-
-![Screenshot 2024-03-26 165013](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/2f1432cd-a9ee-4f32-9da1-3a2808d47752)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/2b4156b5-dca8-4763-b2d1-384242df4b23)
 
 ```
 np.sqrt(df["Highly Positive Skew"])
 ```
-
-![Screenshot 2024-03-26 165017](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/b9927ce7-1ffd-4320-98de-0ce9a340e20e)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/f1d49252-4997-4dc3-b905-438a91af37a8)
 
 ```
 np.square(df["Highly Positive Skew"])
 ```
-
-![Screenshot 2024-03-26 165022](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/90e9195f-7fb3-46fb-b085-cd5fdbe95c82)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/01c8afd9-3287-4c58-977f-c43db1aba7ff)
 
 ```
 df["Highly Positive Skew_boxcox"], parameters=stats.boxcox(df["Highly Positive Skew"])
 df
 ```
-
-![Screenshot 2024-03-26 165027](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/b122883e-8a6e-4779-bc85-09886fb6de90)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/1f345c86-c0f1-4a7c-99c7-9d7f7ee24ce8)
 
 ```
 df.skew()
 ```
-
-![Screenshot 2024-03-26 165032](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/bfbec92b-dc15-4238-8eae-f2ce3be43bc0)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/a1fcc12d-2f68-4951-b8ba-ce5a13544d23)
 
 ```
 df["Highly Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Highly Negative Skew"])
 ```
-
-![Screenshot 2024-03-26 165037](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/a078d4cb-dce2-45a6-b613-99cc4d313966)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/d84c61ec-dd51-45ae-a2d1-0b7272d8e630)
 
 ```
 import seaborn as sns
@@ -191,15 +172,13 @@ import matplotlib.pyplot as plt
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 plt.show()
 ```
-
-![Screenshot 2024-03-26 165052](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/f33b4561-b92d-4f18-967e-e3224d7a4a28)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/09a83e2b-950f-463f-9e97-bea2426780be)
 
 ```
 sm.qqplot(np.reciprocal(df["Moderate Negative Skew"]),line='45')
 plt.show()
 ```
-
-![Screenshot 2024-03-26 165056](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/fae1ae22-a0b7-4fbb-b40e-b8436fe9a11f)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/9f8a1915-eeba-4959-a64f-2e469c1a6894)
 
 ```
 from sklearn.preprocessing import QuantileTransformer
@@ -210,23 +189,20 @@ df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
 sm.qqplot(df["Moderate Negative Skew"],line='45')
 plt.show()
 ```
-
-![Screenshot 2024-03-26 165106](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/bb53f1a5-7d35-414d-b196-24eca3434780)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/e3338bb1-b492-4cd5-b32b-02e2430bc9da)
 
 ```
 df["Highly Negative Skew_1"]=qt.fit_transform(df[["Highly Negative Skew"]])
 sm.qqplot(df["Highly Negative Skew"],line='45')
 plt.show()
 ```
-
-![Screenshot 2024-03-26 165111](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/cc2d9ce7-4811-44a0-bf21-aeed274b2728)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/b732faef-2b5a-4265-a643-f86e382bbc04)
 
 ```
 sm.qqplot(df["Highly Negative Skew_1"],line='45')
 plt.show()
 ```
-
-![Screenshot 2024-03-26 165117](https://github.com/gokulapriya632202/EXNO-3-DS/assets/119560302/c6b4c14b-1d8d-4802-9651-1cc7cb3a610f)
+![image](https://github.com/svarsha220/EXNO-3-DS/assets/127709117/3f12d222-7685-4aa9-8288-c1717a69c014)
 
 
 # RESULT:
